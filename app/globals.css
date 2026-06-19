@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dark-800;
+  }
+
+  body {
+    @apply bg-dark-950 text-dark-100;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-600;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-dark-900/60 backdrop-blur-xl border border-dark-800/50;
+  }
+
+  .glass-strong {
+    @apply bg-dark-900/80 backdrop-blur-2xl border border-dark-700/50;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400;
+    background-size: 200% auto;
+    animation: gradient 8s ease infinite;
+  }
+
+  .gradient-text-static {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-400;
+  }
+
+  .gradient-border {
+    position: relative;
+    border: 1px solid transparent;
+    background: linear-gradient(theme('colors.dark.900'), theme('colors.dark.900')) padding-box,
+      linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500'), theme('colors.primary.500')) border-box;
+  }
+
+  .card-glow {
+    @apply transition-all duration-500;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
+  }
+
+  .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(99, 102, 241, 0.05) 25%,
+      rgba(99, 102, 241, 0.1) 50%,
+      rgba(99, 102, 241, 0.05) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mask-radial {
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 70%);
+  }
+}
