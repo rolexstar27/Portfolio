@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   HiArrowTopRightOnSquare,
@@ -20,7 +21,7 @@ const projects = [
     borderColor: 'border-violet-500/20',
     glowColor: 'rgba(139, 92, 246, 0.15)',
     accent: 'text-violet-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: true,
@@ -34,7 +35,7 @@ const projects = [
     borderColor: 'border-cyan-500/20',
     glowColor: 'rgba(6, 182, 212, 0.15)',
     accent: 'text-cyan-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: true,
@@ -48,7 +49,7 @@ const projects = [
     borderColor: 'border-emerald-500/20',
     glowColor: 'rgba(16, 185, 129, 0.15)',
     accent: 'text-emerald-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: true,
@@ -62,7 +63,7 @@ const projects = [
     borderColor: 'border-amber-500/20',
     glowColor: 'rgba(245, 158, 11, 0.15)',
     accent: 'text-amber-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: false,
@@ -76,7 +77,7 @@ const projects = [
     borderColor: 'border-pink-500/20',
     glowColor: 'rgba(236, 72, 153, 0.15)',
     accent: 'text-pink-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: false,
@@ -90,7 +91,7 @@ const projects = [
     borderColor: 'border-blue-500/20',
     glowColor: 'rgba(59, 130, 246, 0.15)',
     accent: 'text-blue-400',
-    image: null,
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop&auto=format',
     demo: '#',
     github: '#',
     featured: false,
@@ -125,23 +126,38 @@ const ProjectCard = ({ project, index }) => {
       >
         {/* Image / Placeholder section */}
         <div className="relative h-48 sm:h-56 overflow-hidden">
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.color}`}>
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Animated background pattern */}
-              <div className="relative w-full h-full">
-                <motion.div
-                  className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border ${project.borderColor} opacity-30`}
-                  animate={{ scale: [1, 1.5, 1], rotate: [0, 180, 360] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                />
-                <motion.div
-                  className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border ${project.borderColor} opacity-20`}
-                  animate={{ scale: [1.2, 0.8, 1.2], rotate: [360, 180, 0] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                />
+          {project.image ? (
+            <div className="absolute inset-0">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                priority={project.featured}
+              />
+              {/* Gradient overlay for better text readability */}
+              <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-60`} />
+            </div>
+          ) : (
+            <div className={`absolute inset-0 bg-gradient-to-br ${project.color}`}>
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Animated background pattern */}
+                <div className="relative w-full h-full">
+                  <motion.div
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full border ${project.borderColor} opacity-30`}
+                    animate={{ scale: [1, 1.5, 1], rotate: [0, 180, 360] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <motion.div
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full border ${project.borderColor} opacity-20`}
+                    animate={{ scale: [1.2, 0.8, 1.2], rotate: [360, 180, 0] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
+          )}
 
           {/* Featured badge */}
           {project.featured && (
