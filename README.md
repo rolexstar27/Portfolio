@@ -51,42 +51,6 @@ portfolio/
 └── package.json
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm (or yarn / pnpm)
-
-### Installation
-
-```bash
-git clone <repository-url>
-cd portfolio
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Production Build
-
-```bash
-npm run build
-npm start
-```
-
-### Lint
-
-```bash
-npm run lint
-```
-
 ## Customization
 
 - **Content:** Edit the constants in each component under `components/` to update stats, skills, projects, and contact info.
