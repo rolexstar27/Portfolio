@@ -23,13 +23,6 @@ A modern, animated personal portfolio website built with Next.js 14, Tailwind CS
 
 - **Light/Dark Theme Toggle** — animated sun/moon icon in the nav bar with smooth 500ms transitions across all elements
 - **Glassmorphism** — frosted glass cards in both themes (white translucent in light, dark translucent in dark)
-- **Aurora Gradients** — animated gradient backgrounds and gradient text effects
-- **Floating Navigation** — scroll-aware active highlighting with animated pill indicator, mobile hamburger menu, and theme toggle
-- **Hero Section** — animated grid background, aurora gradient overlay, floating shapes, glow orbs, gradient text, social links
-- **About Section** — stats grid, profile placeholder, floating tech-bubble icons, highlight cards
-- **Skills Section** — three category cards (Frontend, Backend, DevOps & Tools) with animated skill bars and hover percentages
-- **Projects Showcase** — 6 project cards with featured badges, animated backgrounds, hover overlays with demo/source links
-- **Contact Section** — contact info, social links, and a contact form (client-side simulated)
 - **Responsive Design** — fully responsive across all breakpoints (mobile, tablet, desktop)
 - **Smooth Scrolling** — anchor-based navigation with scroll-aware active states
 
