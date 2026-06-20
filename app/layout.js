@@ -20,13 +20,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: 'Alex Chen | Creative Developer',
+  title: 'Hay Mar Maw | Creative Developer',
   description:
-    'Portfolio of Alex Chen — a creative full-stack developer crafting beautiful, performant web experiences with modern technologies.',
+    'Portfolio of Hay Mar Maw — a creative full-stack developer crafting beautiful, performant web experiences with modern technologies.',
   keywords: ['developer', 'portfolio', 'react', 'next.js', 'frontend', 'full-stack'],
-  authors: [{ name: 'Alex Chen' }],
+  authors: [{ name: 'Hay Mar Maw' }],
   openGraph: {
-    title: 'Alex Chen | Creative Developer',
+    title: 'Hay Mar Maw | Creative Developer',
     description: 'Crafting beautiful, performant web experiences.',
     type: 'website',
   },

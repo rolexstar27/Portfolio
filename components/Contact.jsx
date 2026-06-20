@@ -13,7 +13,7 @@ import { FaGithub, FaLinkedin, FaXTwitter, FaDiscord } from 'react-icons/fa6';
 
 const socialLinks = [
   { icon: FaGithub, href: '#', label: 'GitHub', color: 'hover:text-white' },
-  { icon: FaLinkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-400' },
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/haymarmaw/', label: 'LinkedIn', color: 'hover:text-blue-400' },
   { icon: FaXTwitter, href: '#', label: 'Twitter', color: 'hover:text-sky-400' },
   { icon: FaDiscord, href: '#', label: 'Discord', color: 'hover:text-indigo-400' },
 ];
@@ -22,14 +22,14 @@ const contactInfo = [
   {
     icon: HiEnvelope,
     label: 'Email',
-    value: 'alex@example.com',
-    href: 'mailto:alex@example.com',
+    value: 'haymarmaw@gmail.com',
+    href: 'mailto:haymarmaw@gmail.com',
     color: 'text-primary-400',
   },
   {
     icon: HiMapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'Myanmar',
     color: 'text-accent-400',
   },
 ];

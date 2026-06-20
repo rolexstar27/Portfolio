@@ -133,7 +133,7 @@ export default function Hero() {
             {/* Location */}
             <motion.div variants={itemVariants} className="flex items-center justify-center gap-1.5 text-dark-500 mb-8">
               <HiMapPin className="w-4 h-4" />
-              <span className="text-sm">San Francisco, CA</span>
+              <span className="text-sm">Myanmar</span>
             </motion.div>
 
             {/* CTAs */}
@@ -164,7 +164,7 @@ export default function Hero() {
             <motion.div variants={itemVariants} className="flex items-center justify-center gap-6 mb-16">
               {[
                 { icon: FaGithub, href: '#', label: 'GitHub' },
-                { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+                { icon: FaLinkedin, href: 'https://www.linkedin.com/in/haymarmaw/', label: 'LinkedIn' },
                 { icon: FaXTwitter, href: '#', label: 'Twitter' },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a

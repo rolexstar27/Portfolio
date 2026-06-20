@@ -1,4 +1,4 @@
-json{
+{
   "mcpServers": {
     "21st-dev": {
       "command": "npx",

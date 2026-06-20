@@ -101,7 +101,7 @@ export default function About() {
                   {/* Placeholder for profile image */}
                   <div className="text-center p-8">
                     <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                      <span className="text-3xl font-display font-bold text-white">AC</span>
+                      <span className="text-3xl font-display font-bold text-white">HM</span>
                     </div>
                     <p className="text-dark-400 text-sm">Profile Image</p>
                   </div>

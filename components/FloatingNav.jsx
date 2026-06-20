@@ -85,10 +85,10 @@ export default function FloatingNav() {
             whileTap={{ scale: 0.98 }}
           >
             <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/25">
-              A
+              H
             </span>
             <span className="font-display font-bold text-lg text-white hidden sm:block">
-              Alex<span className="text-primary-400">.</span>Chen
+              Hay<span className="text-primary-400">.</span>Mar Maw
             </span>
           </motion.a>
 

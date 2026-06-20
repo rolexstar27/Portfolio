@@ -14,7 +14,7 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: FaGithub, href: '#', label: 'GitHub' },
-  { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/haymarmaw/', label: 'LinkedIn' },
   { icon: FaXTwitter, href: '#', label: 'Twitter' },
 ];
 
@@ -35,10 +35,10 @@ export default function Footer() {
           <div className="sm:col-span-1">
             <a href="#hero" onClick={scrollToTop} className="inline-flex items-center gap-2 group mb-4">
               <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/25">
-                A
+                H
               </span>
               <span className="font-display font-bold text-lg text-white">
-                Alex<span className="text-primary-400">.</span>Chen
+                Hay<span className="text-primary-400">.</span>Mar Maw
               </span>
             </a>
             <p className="text-dark-500 text-sm leading-relaxed max-w-xs">
@@ -90,7 +90,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-dark-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-dark-600 text-xs flex items-center gap-1.5">
-            &copy; {new Date().getFullYear()} Alex Chen. Made with
+            &copy; {new Date().getFullYear()} Hay Mar Maw. Made with
             <HiHeart className="w-3 h-3 text-red-400 inline animate-pulse" />
             and lots of ☕
           </p>
