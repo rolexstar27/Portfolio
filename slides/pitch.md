@@ -17,7 +17,7 @@ Loves clean code, thoughtful design, and delightful interactions.
 ---
 
 <!-- slide 2 -->
-# Their problem
+# The problem
 
 - No single place to showcase skills, projects, and personality
 - Needed a portfolio that stands out in a crowded job market
