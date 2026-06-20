@@ -4,6 +4,12 @@
 
 A modern, animated personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Features a light/dark theme toggle with glassmorphism, gradient effects, and smooth animations throughout.
 
+<p align="center">
+  <a href="https://hmm-portfolio.vercel.app/">
+    <img src="screenshots/website.png" alt="UI UX Pro Max" width="800">
+  </a>
+</p>
+
 ## Tech Stack
 
 - **Framework:** Next.js 14 (App Router)
