@@ -20,7 +20,7 @@ const skillCategories = [
     border: 'border-sky-500/20',
     skills: [
       { name: 'React', level: 95, icon: SiReact, color: 'text-sky-400' },
-      { name: 'Next.js', level: 90, icon: SiNextdotjs, color: 'text-white' },
+      { name: 'Next.js', level: 90, icon: SiNextdotjs, color: 'text-gray-900 dark:text-white' },
       { name: 'TypeScript', level: 92, icon: SiTypescript, color: 'text-blue-500' },
       { name: 'Tailwind CSS', level: 95, icon: SiTailwindcss, color: 'text-cyan-400' },
       { name: 'Vue.js', level: 75, icon: SiVuedotjs, color: 'text-emerald-400' },
@@ -39,7 +39,7 @@ const skillCategories = [
       { name: 'GraphQL', level: 82, icon: SiGraphql, color: 'text-pink-400' },
       { name: 'PostgreSQL', level: 88, icon: SiPostgresql, color: 'text-blue-400' },
       { name: 'MongoDB', level: 78, icon: SiMongodb, color: 'text-green-400' },
-      { name: 'Prisma', level: 85, icon: SiPrisma, color: 'text-white' },
+      { name: 'Prisma', level: 85, icon: SiPrisma, color: 'text-gray-900 dark:text-white' },
     ],
   },
   {
@@ -52,7 +52,7 @@ const skillCategories = [
       { name: 'Docker', level: 75, icon: SiDocker, color: 'text-blue-400' },
       { name: 'Git', level: 92, icon: SiGit, color: 'text-orange-400' },
       { name: 'AWS', level: 72, icon: FaAws, color: 'text-yellow-400' },
-      { name: 'Vercel', level: 88, icon: SiVercel, color: 'text-white' },
+      { name: 'Vercel', level: 88, icon: SiVercel, color: 'text-gray-900 dark:text-white' },
       { name: 'Firebase', level: 80, icon: SiFirebase, color: 'text-amber-400' },
       { name: 'Jest', level: 85, icon: SiJest, color: 'text-red-400' },
     ],
@@ -84,7 +84,7 @@ const SkillBar = ({ skill, index, isInView }) => {
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2.5">
           <skill.icon className={`w-4 h-4 ${skill.color}`} />
-          <span className="text-sm font-medium text-dark-200 group-hover:text-white transition-colors">
+          <span className="text-sm font-medium text-gray-700 dark:text-dark-200 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
             {skill.name}
           </span>
         </div>
@@ -94,14 +94,14 @@ const SkillBar = ({ skill, index, isInView }) => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 10 }}
-              className="text-xs font-mono text-primary-400"
+              className="text-xs font-mono text-primary-500 dark:text-primary-400"
             >
               {skill.level}%
             </motion.span>
           )}
         </AnimatePresence>
       </div>
-      <div className="h-1.5 rounded-full bg-dark-800 overflow-hidden">
+      <div className="h-1.5 rounded-full bg-gray-200 dark:bg-dark-800 overflow-hidden">
         <motion.div
           className={`h-full rounded-full bg-gradient-to-r ${skill.color.replace('text-', 'from-').split(' ')[0]} to-transparent`}
           initial={{ width: 0 }}
@@ -129,12 +129,12 @@ const SkillCard = ({ category, isInView, index }) => (
 
     {/* Category Header */}
     <div className="flex items-center gap-3 mb-8 relative z-10">
-      <span className={`p-2.5 rounded-xl bg-dark-800/50 ${category.color}`}>
+      <span className={`p-2.5 rounded-xl bg-gray-100/50 dark:bg-dark-800/50 ${category.color}`}>
         <category.icon className="w-5 h-5" />
       </span>
       <div>
-        <h3 className="font-display text-lg font-bold text-white">{category.label}</h3>
-        <p className="text-xs text-dark-500">{category.skills.length} technologies</p>
+        <h3 className="font-display text-lg font-bold text-gray-900 dark:text-white">{category.label}</h3>
+        <p className="text-xs text-gray-400 dark:text-dark-500">{category.skills.length} technologies</p>
       </div>
     </div>
 
@@ -160,8 +160,8 @@ export default function Skills() {
     <section id="skills" ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-dark-950" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-500/3 blur-[150px] rounded-full" />
+        <div className="absolute inset-0 bg-white dark:bg-dark-950" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-500/3 dark:bg-primary-500/3 blur-[150px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -172,12 +172,12 @@ export default function Skills() {
           transition={{ type: 'spring', stiffness: 100, damping: 20 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">Skills</span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+          <span className="text-primary-500 dark:text-primary-400 font-mono text-sm tracking-widest uppercase">Skills</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">
             Technologies I{' '}
             <span className="gradient-text-static">Excel At</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto text-balance">
+          <p className="text-gray-500 dark:text-dark-400 text-lg max-w-2xl mx-auto text-balance">
             A curated set of tools and technologies I use daily to bring ideas to life.
           </p>
         </motion.div>
@@ -201,13 +201,13 @@ export default function Skills() {
           transition={{ delay: 0.6, type: 'spring', stiffness: 100, damping: 20 }}
           className="mt-12 text-center"
         >
-          <p className="text-dark-500 text-sm mb-4">Also experienced with</p>
+          <p className="text-gray-400 dark:text-dark-500 text-sm mb-4">Also experienced with</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {['Redux', 'SASS', 'Webpack', 'REST APIs', 'CI/CD', 'Agile/Scrum', 'Figma', 'Responsive Design', 'Accessibility', 'SEO'].map(
               (tag) => (
                 <motion.span
                   key={tag}
-                  className="px-4 py-1.5 rounded-full text-xs font-medium bg-dark-900 text-dark-400 border border-dark-800 hover:border-primary-500/30 hover:text-dark-200 transition-colors cursor-default"
+                  className="px-4 py-1.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-dark-900 text-gray-500 dark:text-dark-400 border border-gray-200 dark:border-dark-800 hover:border-primary-500/30 hover:text-gray-700 dark:hover:text-dark-200 transition-colors cursor-default"
                   whileHover={{ scale: 1.05, y: -2 }}
                 >
                   {tag}

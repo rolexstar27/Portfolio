@@ -146,7 +146,7 @@ const ProjectCard = ({ project, index }) => {
           {/* Featured badge */}
           {project.featured && (
             <div className="absolute top-4 left-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dark-950/60 backdrop-blur-md border border-primary-500/30 text-xs font-medium text-primary-300">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/80 dark:bg-dark-950/60 backdrop-blur-md border border-primary-500/30 text-xs font-medium text-primary-600 dark:text-primary-300">
                 <HiSparkles className="w-3 h-3" />
                 Featured
               </span>
@@ -160,7 +160,7 @@ const ProjectCard = ({ project, index }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute inset-0 bg-dark-950/70 backdrop-blur-sm flex items-center justify-center gap-4"
+                className="absolute inset-0 bg-white/70 dark:bg-dark-950/70 backdrop-blur-sm flex items-center justify-center gap-4"
               >
                 <motion.a
                   href={project.demo}
@@ -168,7 +168,7 @@ const ProjectCard = ({ project, index }) => {
                   animate={{ scale: 1, y: 0 }}
                   exit={{ scale: 0, y: 10 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-dark-900 text-sm font-medium hover:bg-dark-100 transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-dark-900 text-sm font-medium hover:bg-gray-800 dark:hover:bg-dark-100 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -181,7 +181,7 @@ const ProjectCard = ({ project, index }) => {
                   animate={{ scale: 1, y: 0 }}
                   exit={{ scale: 0, y: 10 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20, delay: 0.05 }}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border-dark-700/50 text-white text-sm font-medium hover:border-primary-500/30 transition-colors"
+                  className="flex items-center gap-2 px-5 py-2.5 rounded-full glass border-gray-300/50 dark:border-dark-700/50 text-gray-900 dark:text-white text-sm font-medium hover:border-primary-500/30 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -195,10 +195,10 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Content */}
         <div className="p-6 sm:p-7">
-          <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-primary-300 transition-colors duration-300">
+          <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-300 transition-colors duration-300">
             {project.title}
           </h3>
-          <p className="text-dark-400 text-sm leading-relaxed mb-5 line-clamp-3">
+          <p className="text-gray-500 dark:text-dark-400 text-sm leading-relaxed mb-5 line-clamp-3">
             {project.description}
           </p>
 
@@ -207,7 +207,7 @@ const ProjectCard = ({ project, index }) => {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-1 rounded-md text-xs font-mono bg-dark-950/50 text-dark-500 border border-dark-800/50"
+                className="px-2.5 py-1 rounded-md text-xs font-mono bg-gray-100/50 dark:bg-dark-950/50 text-gray-500 dark:text-dark-500 border border-gray-200/50 dark:border-dark-800/50"
               >
                 {tag}
               </span>
@@ -216,7 +216,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Bottom gradient line */}
-        <div className={`h-0.5 bg-gradient-to-r from-transparent via-${project.accent.split('-')[1]}-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+        <div className={`h-0.5 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
       </div>
     </motion.div>
   );
@@ -230,7 +230,7 @@ export default function Projects() {
     <section id="projects" ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-dark-950" />
+        <div className="absolute inset-0 bg-gray-50/50 dark:bg-dark-950" />
         <div className="absolute bottom-0 left-0 right-0 h-[600px] bg-gradient-to-t from-primary-500/3 to-transparent" />
       </div>
 
@@ -242,12 +242,12 @@ export default function Projects() {
           transition={{ type: 'spring', stiffness: 100, damping: 20 }}
           className="text-center mb-16 lg:mb-20"
         >
-          <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">Projects</span>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+          <span className="text-primary-500 dark:text-primary-400 font-mono text-sm tracking-widest uppercase">Projects</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">
             Selected{' '}
             <span className="gradient-text-static">Work</span>
           </h2>
-          <p className="text-dark-400 text-lg max-w-2xl mx-auto text-balance">
+          <p className="text-gray-500 dark:text-dark-400 text-lg max-w-2xl mx-auto text-balance">
             A showcase of projects that represent my passion for clean code, beautiful design,
             and exceptional user experiences.
           </p>
@@ -274,7 +274,7 @@ export default function Projects() {
         >
           <motion.a
             href="#"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full glass border-dark-700/50 text-dark-200 hover:text-white font-medium text-sm transition-all duration-300 group"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full glass border-gray-300/50 dark:border-dark-700/50 text-gray-700 dark:text-dark-200 hover:text-gray-900 dark:hover:text-white font-medium text-sm transition-all duration-300 group"
             whileHover={{ scale: 1.03, borderColor: 'rgba(99, 102, 241, 0.3)' }}
             whileTap={{ scale: 0.97 }}
           >

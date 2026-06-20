@@ -25,9 +25,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative border-t border-dark-800/50">
+    <footer className="relative border-t border-gray-200/50 dark:border-dark-800/50">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary-500/3 dark:from-primary-500/5 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid sm:grid-cols-3 gap-8 mb-12">
@@ -37,18 +37,18 @@ export default function Footer() {
               <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/25">
                 H
               </span>
-              <span className="font-display font-bold text-lg text-white">
-                Hay<span className="text-primary-400">.</span>Mar Maw
+              <span className="font-display font-bold text-lg text-gray-900 dark:text-white">
+                Hay<span className="text-primary-500 dark:text-primary-400">.</span>Mar Maw
               </span>
             </a>
-            <p className="text-dark-500 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-400 dark:text-dark-500 text-sm leading-relaxed max-w-xs">
               Crafting digital experiences with clean code, thoughtful design, and a passion for excellence.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-medium text-sm mb-4">Quick Links</h4>
+            <h4 className="text-gray-900 dark:text-white font-medium text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.label}>
@@ -58,7 +58,7 @@ export default function Footer() {
                       e.preventDefault();
                       document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
                     }}
-                    className="text-dark-400 hover:text-white text-sm transition-colors duration-200"
+                    className="text-gray-500 dark:text-dark-400 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
                   >
                     {link.label}
                   </a>
@@ -69,14 +69,14 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-white font-medium text-sm mb-4">Connect</h4>
+            <h4 className="text-gray-900 dark:text-white font-medium text-sm mb-4">Connect</h4>
             <div className="flex items-center gap-3">
               {socialLinks.map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full glass border-dark-700/50 flex items-center justify-center text-dark-400 hover:text-primary-400 hover:border-primary-500/30 transition-all duration-300"
+                  className="w-9 h-9 rounded-full glass border-gray-300/50 dark:border-dark-700/50 flex items-center justify-center text-gray-500 dark:text-dark-400 hover:text-primary-500 dark:hover:text-primary-400 hover:border-primary-500/30 transition-all duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -88,8 +88,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-dark-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-dark-600 text-xs flex items-center gap-1.5">
+        <div className="pt-8 border-t border-gray-200/50 dark:border-dark-800/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-gray-400 dark:text-dark-600 text-xs flex items-center gap-1.5">
             &copy; {new Date().getFullYear()} Hay Mar Maw. Made with
             <HiHeart className="w-3 h-3 text-red-400 inline animate-pulse" />
             and lots of ☕
@@ -98,11 +98,11 @@ export default function Footer() {
           <motion.a
             href="#hero"
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-dark-500 hover:text-white text-xs transition-colors"
+            className="group flex items-center gap-2 text-gray-400 dark:text-dark-500 hover:text-gray-900 dark:hover:text-white text-xs transition-colors"
             whileHover={{ y: -2 }}
           >
             Back to top
-            <span className="p-1 rounded-md bg-dark-800 group-hover:bg-primary-500/20 transition-colors">
+            <span className="p-1 rounded-md bg-gray-100 dark:bg-dark-800 group-hover:bg-primary-500/20 transition-colors">
               <HiArrowUp className="w-3 h-3" />
             </span>
           </motion.a>

@@ -4,6 +4,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -45,6 +46,14 @@ module.exports = {
           900: '#0f172a',
           950: '#020617',
         },
+        surface: {
+          50: '#ffffff',
+          100: '#fafbfc',
+          200: '#f1f3f5',
+          300: '#e9ecef',
+          400: '#dee2e6',
+          500: '#ced4da',
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
@@ -60,6 +69,9 @@ module.exports = {
         'gradient': 'gradient 8s ease infinite',
         'slide-up': 'slide-up 0.5s ease-out',
         'border-glow': 'border-glow 3s ease-in-out infinite',
+        'aurora': 'aurora 12s ease-in-out infinite',
+        'morph': 'morph 15s ease-in-out infinite',
+        'spin-slow': 'spin 8s linear infinite',
       },
       keyframes: {
         float: {
@@ -86,9 +98,20 @@ module.exports = {
           '0%, 100%': { borderColor: 'rgba(99, 102, 241, 0.3)' },
           '50%': { borderColor: 'rgba(99, 102, 241, 0.8)' },
         },
+        aurora: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '25%': { backgroundPosition: '50% 100%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '75%': { backgroundPosition: '50% 0%' },
+        },
+        morph: {
+          '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+          '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+        },
       },
       backgroundImage: {
         'grid-pattern': 'linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px)',
+        'grid-pattern-light': 'linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px)',
       },
       backgroundSize: {
         'grid': '60px 60px',

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import ThemeToggle from './ThemeToggle';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
@@ -70,7 +71,7 @@ export default function FloatingNav() {
       animate="visible"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'glass-strong shadow-lg shadow-primary-500/5'
+          ? 'glass-strong shadow-lg shadow-gray-200/10 dark:shadow-primary-500/5'
           : 'bg-transparent'
       }`}
     >
@@ -87,8 +88,8 @@ export default function FloatingNav() {
             <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/25">
               H
             </span>
-            <span className="font-display font-bold text-lg text-white hidden sm:block">
-              Hay<span className="text-primary-400">.</span>Mar Maw
+            <span className="font-display font-bold text-lg text-gray-900 dark:text-white hidden sm:block">
+              Hay<span className="text-primary-500 dark:text-primary-400">.</span>Mar Maw
             </span>
           </motion.a>
 
@@ -103,14 +104,14 @@ export default function FloatingNav() {
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-full transition-colors duration-300 ${
                     isActive
-                      ? 'text-white'
-                      : 'text-dark-400 hover:text-white'
+                      ? 'text-gray-900 dark:text-white'
+                      : 'text-gray-500 dark:text-dark-400 hover:text-gray-900 dark:hover:text-white'
                   }`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-primary-500/15 border border-primary-500/30 rounded-full"
+                      className="absolute inset-0 bg-primary-500/10 dark:bg-primary-500/15 border border-primary-500/20 dark:border-primary-500/30 rounded-full"
                       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -118,25 +119,31 @@ export default function FloatingNav() {
                 </a>
               );
             })}
-            <motion.a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="ml-3 px-5 py-2 text-sm font-medium rounded-full bg-primary-500 hover:bg-primary-400 text-white transition-colors duration-300 shadow-lg shadow-primary-500/25"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Let&apos;s Talk
-            </motion.a>
+            <div className="flex items-center gap-2 ml-3">
+              <ThemeToggle />
+              <motion.a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="px-5 py-2 text-sm font-medium rounded-full bg-primary-500 hover:bg-primary-400 text-white transition-colors duration-300 shadow-lg shadow-primary-500/25"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Let&apos;s Talk
+              </motion.a>
+            </div>
           </div>
 
           {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative z-50 p-2 text-dark-300 hover:text-white transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="relative z-50 p-2 text-gray-500 dark:text-dark-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -148,7 +155,7 @@ export default function FloatingNav() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="md:hidden overflow-hidden glass-strong border-t border-dark-800/50"
+            className="md:hidden overflow-hidden glass-strong border-t border-gray-200/50 dark:border-dark-800/50"
           >
             <div className="px-4 py-4 space-y-1">
               {NAV_LINKS.map((link, i) => {
@@ -162,8 +169,8 @@ export default function FloatingNav() {
                     custom={i}
                     className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
                       isActive
-                        ? 'bg-primary-500/15 text-white border border-primary-500/20'
-                        : 'text-dark-400 hover:text-white hover:bg-dark-800/50'
+                        ? 'bg-primary-500/10 dark:bg-primary-500/15 text-gray-900 dark:text-white border border-primary-500/20 dark:border-primary-500/20'
+                        : 'text-gray-500 dark:text-dark-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100/50 dark:hover:bg-dark-800/50'
                     }`}
                   >
                     {link.label}

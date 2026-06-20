@@ -4,12 +4,13 @@
 
 @layer base {
   * {
-    @apply border-dark-800;
+    @apply border-gray-200 dark:border-dark-800;
   }
 
   body {
-    @apply bg-dark-950 text-dark-100;
+    @apply bg-white text-gray-900 dark:bg-dark-950 dark:text-dark-100;
     overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 
   ::selection {
@@ -21,52 +22,83 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-dark-950;
+    @apply bg-gray-100 dark:bg-dark-950;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-dark-700 rounded-full;
+    @apply bg-gray-300 dark:bg-dark-700 rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-dark-600;
+    @apply bg-gray-400 dark:bg-dark-600;
   }
 }
 
 @layer components {
+  /* Glassmorphism - Light Mode */
   .glass {
-    @apply bg-dark-900/60 backdrop-blur-xl border border-dark-800/50;
+    @apply bg-white/60 backdrop-blur-xl border border-gray-200/50 shadow-lg shadow-gray-200/20;
   }
 
   .glass-strong {
-    @apply bg-dark-900/80 backdrop-blur-2xl border border-dark-700/50;
+    @apply bg-white/80 backdrop-blur-2xl border border-gray-200/60 shadow-xl shadow-gray-200/30;
   }
 
+  /* Glassmorphism - Dark Mode */
+  .dark .glass {
+    @apply bg-dark-900/60 backdrop-blur-xl border border-dark-800/50 shadow-lg shadow-dark-950/20;
+  }
+
+  .dark .glass-strong {
+    @apply bg-dark-900/80 backdrop-blur-2xl border border-dark-700/50 shadow-xl shadow-dark-950/30;
+  }
+
+  /* Gradient Text */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500;
     background-size: 200% auto;
     animation: gradient 8s ease infinite;
   }
 
-  .gradient-text-static {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 to-accent-400;
+  .dark .gradient-text {
+    @apply from-primary-400 via-accent-400 to-primary-400;
   }
 
+  .gradient-text-static {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-accent-500;
+  }
+
+  .dark .gradient-text-static {
+    @apply from-primary-400 to-accent-400;
+  }
+
+  /* Gradient Border */
   .gradient-border {
     position: relative;
     border: 1px solid transparent;
+    background: linear-gradient(theme('colors.white'), theme('colors.white')) padding-box,
+      linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500'), theme('colors.primary.500')) border-box;
+  }
+
+  .dark .gradient-border {
     background: linear-gradient(theme('colors.dark.900'), theme('colors.dark.900')) padding-box,
       linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500'), theme('colors.primary.500')) border-box;
   }
 
+  /* Card Glow */
   .card-glow {
     @apply transition-all duration-500;
   }
 
   .card-glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.12), 0 0 60px rgba(99, 102, 241, 0.04);
+  }
+
+  .dark .card-glow:hover {
     box-shadow: 0 0 30px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
   }
 
+  /* Shimmer */
   .shimmer-bg {
     background: linear-gradient(
       90deg,
@@ -78,6 +110,63 @@
     );
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
+  }
+
+  .dark .shimmer-bg {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(99, 102, 241, 0.05) 25%,
+      rgba(99, 102, 241, 0.1) 50%,
+      rgba(99, 102, 241, 0.05) 75%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Aurora Background */
+  .aurora-bg {
+    background: linear-gradient(
+      -45deg,
+      rgba(99, 102, 241, 0.08),
+      rgba(217, 70, 239, 0.06),
+      rgba(99, 102, 241, 0.04),
+      rgba(217, 70, 239, 0.08)
+    );
+    background-size: 400% 400%;
+    animation: aurora 12s ease-in-out infinite;
+  }
+
+  .dark .aurora-bg {
+    background: linear-gradient(
+      -45deg,
+      rgba(99, 102, 241, 0.12),
+      rgba(217, 70, 239, 0.08),
+      rgba(99, 102, 241, 0.06),
+      rgba(217, 70, 239, 0.12)
+    );
+    background-size: 400% 400%;
+    animation: aurora 12s ease-in-out infinite;
+  }
+
+  /* Section Gradient */
+  .section-gradient-light {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(99, 102, 241, 0.02) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .dark .section-gradient-light {
+    background: linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0) 0%,
+      rgba(99, 102, 241, 0.03) 50%,
+      rgba(2, 6, 23, 0) 100%
+    );
   }
 }
 

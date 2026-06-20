@@ -22,7 +22,7 @@ const highlights = [
 
 const techStack = [
   { icon: FaReact, name: 'React', color: 'text-sky-400' },
-  { icon: SiNextdotjs, name: 'Next.js', color: 'text-white' },
+  { icon: SiNextdotjs, name: 'Next.js', color: 'text-gray-900 dark:text-white' },
   { icon: SiTypescript, name: 'TypeScript', color: 'text-blue-500' },
   { icon: SiTailwindcss, name: 'Tailwind', color: 'text-cyan-400' },
   { icon: FaNodeJs, name: 'Node.js', color: 'text-green-500' },
@@ -47,8 +47,8 @@ export default function About() {
   return (
     <section id="about" ref={ref} className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-dark-950">
-        <div className="absolute inset-0 bg-grid-pattern bg-grid mask-radial" />
+      <div className="absolute inset-0 bg-gray-50/50 dark:bg-dark-950">
+        <div className="absolute inset-0 bg-grid-pattern-light dark:bg-grid-pattern bg-grid mask-radial" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,12 +59,12 @@ export default function About() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16 lg:mb-20">
-            <span className="text-primary-400 font-mono text-sm tracking-widest uppercase">About</span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-3 mb-4">
+            <span className="text-primary-500 dark:text-primary-400 font-mono text-sm tracking-widest uppercase">About</span>
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">
               Turning Ideas Into{' '}
               <span className="gradient-text-static">Reality</span>
             </h2>
-            <p className="text-dark-400 text-lg max-w-2xl mx-auto text-balance">
+            <p className="text-gray-500 dark:text-dark-400 text-lg max-w-2xl mx-auto text-balance">
               I&apos;m a passionate developer who loves building products that make a difference.
               Clean code, thoughtful design, and delightful interactions are what I do best.
             </p>
@@ -78,15 +78,15 @@ export default function About() {
             {stats.map((stat) => (
               <motion.div
                 key={stat.label}
-                className="relative group p-6 rounded-2xl glass border-dark-800/50 text-center overflow-hidden"
+                className="relative group p-6 rounded-2xl glass border-gray-200/50 dark:border-dark-800/50 text-center overflow-hidden"
                 whileHover={{ y: -4 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <span className="block font-display text-3xl lg:text-4xl font-bold text-white mb-1">
+                  <span className="block font-display text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-1">
                     {stat.value}
                   </span>
-                  <span className="text-sm text-dark-400">{stat.label}</span>
+                  <span className="text-sm text-gray-500 dark:text-dark-400">{stat.label}</span>
                 </div>
               </motion.div>
             ))}
@@ -97,13 +97,13 @@ export default function About() {
             {/* Left - Image */}
             <motion.div variants={itemVariants} className="relative">
               <div className="relative aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden gradient-border">
-                <div className="w-full h-full bg-dark-900 flex items-center justify-center">
+                <div className="w-full h-full bg-gray-100 dark:bg-dark-900 flex items-center justify-center">
                   {/* Placeholder for profile image */}
                   <div className="text-center p-8">
                     <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
                       <span className="text-3xl font-display font-bold text-white">HM</span>
                     </div>
-                    <p className="text-dark-400 text-sm">Profile Image</p>
+                    <p className="text-gray-400 dark:text-dark-400 text-sm">Profile Image</p>
                   </div>
                 </div>
                 {/* Decorative corner */}
@@ -115,7 +115,7 @@ export default function About() {
               {techStack.map((tech, i) => (
                 <motion.div
                   key={tech.name}
-                  className={`absolute w-12 h-12 rounded-xl glass border-dark-700/50 flex items-center justify-center ${tech.color}`}
+                  className={`absolute w-12 h-12 rounded-xl glass border-gray-200/50 dark:border-dark-700/50 flex items-center justify-center ${tech.color}`}
                   style={{
                     top: `${15 + (i % 4) * 20}%`,
                     left: i < 4 ? '-10px' : undefined,
@@ -139,12 +139,12 @@ export default function About() {
 
             {/* Right - Content */}
             <motion.div variants={itemVariants} className="space-y-6">
-              <h3 className="font-display text-2xl lg:text-3xl font-bold text-white">
+              <h3 className="font-display text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
                 A dedicated developer with a{' '}
                 <span className="gradient-text-static">design eye</span>
               </h3>
 
-              <div className="space-y-4 text-dark-300 leading-relaxed">
+              <div className="space-y-4 text-gray-600 dark:text-dark-300 leading-relaxed">
                 <p>
                   With over 5 years of experience in full-stack development, I&apos;ve had the
                   privilege of working with startups and established companies to create
@@ -167,15 +167,15 @@ export default function About() {
                 {highlights.map(({ icon: Icon, title, desc }) => (
                   <motion.div
                     key={title}
-                    className="flex items-start gap-3 p-3 rounded-xl glass border-dark-800/50 hover:border-primary-500/20 transition-colors duration-300"
+                    className="flex items-start gap-3 p-3 rounded-xl glass border-gray-200/50 dark:border-dark-800/50 hover:border-primary-500/20 transition-colors duration-300"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <span className="p-1.5 rounded-lg bg-primary-500/10 text-primary-400">
+                    <span className="p-1.5 rounded-lg bg-primary-500/10 text-primary-500 dark:text-primary-400">
                       <Icon className="w-4 h-4" />
                     </span>
                     <div>
-                      <h4 className="font-medium text-white text-sm">{title}</h4>
-                      <p className="text-dark-500 text-xs mt-0.5">{desc}</p>
+                      <h4 className="font-medium text-gray-900 dark:text-white text-sm">{title}</h4>
+                      <p className="text-gray-400 dark:text-dark-500 text-xs mt-0.5">{desc}</p>
                     </div>
                   </motion.div>
                 ))}
