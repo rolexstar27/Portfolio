@@ -6,7 +6,7 @@ A modern, animated personal portfolio website built with Next.js 14, Tailwind CS
 
 <p align="center">
   <a href="https://hmm-portfolio.vercel.app/">
-    <img src="screenshots/website.png" alt="UI UX Pro Max" width="800">
+    <img src="screenshots/portfolio.png" alt="Hay Mar Maw - Portfolio Website" width="800">
   </a>
 </p>
 
