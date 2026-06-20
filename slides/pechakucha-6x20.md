@@ -30,23 +30,23 @@ Loves clean code, thoughtful design, and delightful interactions.
 # What I built
 
 A **modern developer portfolio** with:
-- Animated hero with gradient text & parallax scrolling
-- About section with floating tech bubbles (React, Next.js, TypeScript, Tailwind, Node.js, PostgreSQL, Figma)
-- Skills showcase with interactive cards
-- Projects gallery with filterable categories
-- Contact form with social links
-- Dark theme, glass morphism, fully responsive
+- Animated hero with aurora gradients, grid background & parallax scrolling
+- About section with stats, profile, floating tech bubbles & highlight cards
+- Skills showcase with 3 categories (Frontend, Backend, DevOps) & animated skill bars
+- 6 project cards with Unsplash images, featured badges & hover overlays
+- Contact form with social links & glassmorphism cards
+- Light/dark theme toggle, fully responsive
 
 ---
 
 <!-- slide 4 -->
 # How I built it
-- **Framework**: Next.js (App Router) + React + Tailwind CSS
-- **Animations**: Framer Motion (staggered reveals, parallax, floating elements)
-- **Icons**: React Icons (Heroicons, Font Awesome, Simple Icons)
-- **MCP**: structured tool for context-aware development
-- **Skill**: custom /web-dev-agent skill for scaffolding & iterating
-- **Agent**: AI-assisted coding via Claude Code
+- **Framework**: Next.js 14 (App Router) + React + Tailwind CSS 3.4
+- **Theme**: `next-themes` — light/dark toggle with smooth transitions
+- **Animations**: Framer Motion 12 (parallax, staggered reveals, floating elements)
+- **Icons**: React Icons (Heroicons, Font Awesome 6, Simple Icons)
+- **Fonts**: Inter, Space Grotesk, JetBrains Mono (via `next/font/google`)
+- **MCP**: structured tool + custom skill + AI-assisted coding via Claude Code
 
 ---
 
@@ -56,6 +56,7 @@ A **modern developer portfolio** with:
 - **Personal brand**: A portfolio is the first impression — this one is memorable
 - **Performance**: Next.js SSR + Tailwind = fast load, great Lighthouse scores
 - **Accessibility**: Semantic HTML, keyboard navigation, screen-reader friendly
+- **Glassmorphism**: Frosted glass cards, aurora gradients, glow orbs in both themes
 - **Maintainable**: Component-based architecture, easy to add new projects
 - **Proof of craft**: The portfolio itself demonstrates the skills it showcases
 
@@ -66,6 +67,8 @@ A **modern developer portfolio** with:
 - [x] repo public
 - [x] MCP + skill + agent used
 - [x] report.md in team repo
-- [x] Modern stack (Next.js, Tailwind, Framer Motion)
+- [x] Modern stack (Next.js 14, Tailwind 3.4, Framer Motion 12)
+- [x] Light/dark theme with glassmorphism & aurora gradients
 - [x] Responsive & accessible design
+- [x] Live demo: hmm-portfolio.vercel.app
 - [x] All 6 slides — 20 seconds each — ready to present!
