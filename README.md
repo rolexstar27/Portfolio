@@ -1,6 +1,6 @@
 # Hay Mar Maw — Developer Portfolio
 
-> **Live Demo:** [https://hmm-portfolio.vercel.app/](https://hmm-portfolio.vercel.app/)
+ **Live Demo:** [https://hmm-portfolio.vercel.app/](https://hmm-portfolio.vercel.app/)
 
 A modern, animated personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion. Features a light/dark theme toggle with glassmorphism, gradient effects, and smooth animations throughout.
 
@@ -62,4 +62,4 @@ portfolio/
 
 ## License
 
-copyright@ 2026
+MIT
