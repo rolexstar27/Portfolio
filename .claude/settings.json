@@ -2,5 +2,11 @@
   "enabledPlugins": {
     "github@claude-plugins-official": true
   },
-  "enabledMcpjsonServers": ["21st-dev"]
+  "enabledMcpjsonServers": ["21st-dev"],
+  "mcpServers": {
+    "21st-dev": {
+      "command": "npx",
+      "args": ["-y", "@21st-dev/mcp-server"]
+    }
+  }
 }
