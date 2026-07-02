@@ -13,10 +13,10 @@ import { FaGithub } from 'react-icons/fa6';
 
 const projects = [
   {
-    title: 'Lumina Dashboard',
+    title: 'PEMS Dashboard',
     description:
       'A real-time analytics dashboard with stunning data visualizations, dark mode, and role-based access control. Built for SaaS companies to track KPIs.',
-    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'tRPC'],
+    tags: [' ASP.Net', 'SQL', 'JavaScript (ES6+)'],
     color: 'from-violet-500/20 to-indigo-500/10',
     borderColor: 'border-violet-500/20',
     glowColor: 'rgba(139, 92, 246, 0.15)',
@@ -27,10 +27,10 @@ const projects = [
     featured: true,
   },
   {
-    title: 'VibeKit UI Library',
+    title: 'DON Wedding Hub',
     description:
-      'A modern component library with 50+ accessible, animated React components. Features customizable themes, dark mode, and comprehensive documentation.',
-    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Storybook'],
+      'A responsive e-commerce web application featuring dynamic inventory filtering, booking schedulers, and membership tier access for a bridal planning business.',
+    tags: ['UI/UX', 'HTML5', 'CSS3', 'Framer Motion', 'Php'],
     color: 'from-cyan-500/20 to-blue-500/10',
     borderColor: 'border-cyan-500/20',
     glowColor: 'rgba(6, 182, 212, 0.15)',
@@ -55,10 +55,10 @@ const projects = [
     featured: true,
   },
   {
-    title: 'MindFlow AI',
+    title: 'Vibe Coding',
     description:
       'AI-powered productivity app with smart task prioritization, natural language processing, and collaborative workspaces.',
-    tags: ['React', 'Python', 'OpenAI', 'FastAPI', 'PostgreSQL'],
+    tags: ['Next.js', 'Tailwin CSS', 'Framer Motion'],
     color: 'from-amber-500/20 to-orange-500/10',
     borderColor: 'border-amber-500/20',
     glowColor: 'rgba(245, 158, 11, 0.15)',
@@ -83,7 +83,7 @@ const projects = [
     featured: false,
   },
   {
-    title: 'DevLog Platform',
+    title: 'Learning Management System',
     description:
       'A blogging platform optimized for developers with MDX support, syntax highlighting, and automated SEO optimization.',
     tags: ['Next.js', 'MDX', 'Tailwind CSS', 'Vercel', 'Contentlayer'],

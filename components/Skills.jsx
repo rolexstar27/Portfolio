@@ -4,14 +4,28 @@ import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiNodedotjs,
-  SiPostgresql, SiPrisma, SiGraphql, SiDocker, SiGit,
-  SiFigma, SiVuedotjs, SiPython, SiMongodb, SiFirebase,
-  SiVercel, SiJest, SiFramer,
+  SiFigma, SiVuedotjs, SiGit, SiVercel, SiJest, SiFramer,
+  SiJquery, SiPhp, SiSupabase, SiNetlify,
 } from 'react-icons/si';
-import { FaCode, FaAws } from 'react-icons/fa6';
+import { FaCode, FaAws, FaDatabase, FaHtml5, FaCss3Alt, FaCloud, FaPaintbrush, FaImage } from 'react-icons/fa6';
 import { HiSparkles } from 'react-icons/hi2';
 
 const skillCategories = [
+  {
+    label: 'UI/UX',
+    icon: SiFigma,
+    color: 'text-pink-400',
+    bg: 'from-pink-500/10 to-pink-500/5',
+    border: 'border-pink-500/20',
+    skills: [
+      { name: 'Figma', level: 92, icon: SiFigma, color: 'text-purple-400', barColor: 'from-purple-400 via-pink-500 to-red-600' },
+      { name: 'Adobe XD', level: 85, icon: FaPaintbrush, color: 'text-pink-500', barColor: 'from-pink-400 via-fuchsia-500 to-purple-600' },
+      { name: 'Adobe Photoshop', level: 88, icon: FaImage, color: 'text-blue-400', barColor: 'from-blue-400 via-cyan-500 to-sky-600' },
+      { name: 'HTML5', level: 95, icon: FaHtml5, color: 'text-orange-400', barColor: 'from-orange-400 via-red-500 to-red-700' },
+      { name: 'CSS3', level: 93, icon: FaCss3Alt, color: 'text-blue-400', barColor: 'from-blue-400 via-blue-500 to-indigo-600' },
+      { name: 'jQuery', level: 80, icon: SiJquery, color: 'text-blue-300', barColor: 'from-blue-300 via-blue-400 to-blue-600' },
+    ],
+  },
   {
     label: 'Frontend',
     icon: SiReact,
@@ -19,27 +33,27 @@ const skillCategories = [
     bg: 'from-sky-500/10 to-sky-500/5',
     border: 'border-sky-500/20',
     skills: [
-      { name: 'React', level: 95, icon: SiReact, color: 'text-sky-400' },
-      { name: 'Next.js', level: 90, icon: SiNextdotjs, color: 'text-gray-900 dark:text-white' },
-      { name: 'TypeScript', level: 92, icon: SiTypescript, color: 'text-blue-500' },
-      { name: 'Tailwind CSS', level: 95, icon: SiTailwindcss, color: 'text-cyan-400' },
-      { name: 'Vue.js', level: 75, icon: SiVuedotjs, color: 'text-emerald-400' },
-      { name: 'Framer Motion', level: 88, icon: SiFramer, color: 'text-purple-400' },
+      { name: 'React', level: 95, icon: SiReact, color: 'text-sky-400', barColor: 'from-sky-400 via-sky-500 to-blue-600' },
+      { name: 'Next.js', level: 90, icon: SiNextdotjs, color: 'text-gray-900 dark:text-white', barColor: 'from-gray-700 via-gray-800 to-black dark:from-gray-300 dark:via-gray-200 dark:to-white' },
+      { name: 'TypeScript', level: 92, icon: SiTypescript, color: 'text-blue-500', barColor: 'from-blue-400 via-blue-500 to-blue-700' },
+      { name: 'Tailwind CSS', level: 95, icon: SiTailwindcss, color: 'text-cyan-400', barColor: 'from-cyan-400 via-cyan-500 to-teal-600' },
+      { name: 'Vue.js', level: 75, icon: SiVuedotjs, color: 'text-emerald-400', barColor: 'from-emerald-400 via-green-500 to-green-700' },
+      { name: 'Framer Motion', level: 88, icon: SiFramer, color: 'text-purple-400', barColor: 'from-purple-400 via-purple-500 to-indigo-600' },
     ],
   },
   {
     label: 'Backend',
-    icon: SiNodedotjs,
+    icon: FaCode,
     color: 'text-green-400',
     bg: 'from-green-500/10 to-green-500/5',
     border: 'border-green-500/20',
     skills: [
-      { name: 'Node.js', level: 90, icon: SiNodedotjs, color: 'text-green-500' },
-      { name: 'Python', level: 70, icon: SiPython, color: 'text-yellow-400' },
-      { name: 'GraphQL', level: 82, icon: SiGraphql, color: 'text-pink-400' },
-      { name: 'PostgreSQL', level: 88, icon: SiPostgresql, color: 'text-blue-400' },
-      { name: 'MongoDB', level: 78, icon: SiMongodb, color: 'text-green-400' },
-      { name: 'Prisma', level: 85, icon: SiPrisma, color: 'text-gray-900 dark:text-white' },
+      { name: 'ASP.NET', level: 85, icon: FaCode, color: 'text-purple-400', barColor: 'from-purple-400 via-violet-500 to-indigo-700' },
+      { name: 'PHP', level: 82, icon: SiPhp, color: 'text-indigo-400', barColor: 'from-indigo-400 via-blue-500 to-blue-700' },
+      { name: 'Node.js', level: 90, icon: SiNodedotjs, color: 'text-green-500', barColor: 'from-green-400 via-green-500 to-emerald-700' },
+      { name: 'SQL', level: 88, icon: FaDatabase, color: 'text-blue-400', barColor: 'from-blue-400 via-blue-500 to-indigo-700' },
+      { name: 'RESTful APIs', level: 90, icon: FaCode, color: 'text-emerald-400', barColor: 'from-emerald-400 via-green-500 to-teal-700' },
+      { name: 'Supabase', level: 80, icon: SiSupabase, color: 'text-emerald-400', barColor: 'from-emerald-400 via-green-500 to-green-700' },
     ],
   },
   {
@@ -49,12 +63,12 @@ const skillCategories = [
     bg: 'from-purple-500/10 to-purple-500/5',
     border: 'border-purple-500/20',
     skills: [
-      { name: 'Docker', level: 75, icon: SiDocker, color: 'text-blue-400' },
-      { name: 'Git', level: 92, icon: SiGit, color: 'text-orange-400' },
-      { name: 'AWS', level: 72, icon: FaAws, color: 'text-yellow-400' },
-      { name: 'Vercel', level: 88, icon: SiVercel, color: 'text-gray-900 dark:text-white' },
-      { name: 'Firebase', level: 80, icon: SiFirebase, color: 'text-amber-400' },
-      { name: 'Jest', level: 85, icon: SiJest, color: 'text-red-400' },
+      { name: 'Azure', level: 82, icon: FaCloud, color: 'text-blue-400', barColor: 'from-blue-400 via-sky-500 to-cyan-600' },
+      { name: 'Git', level: 92, icon: SiGit, color: 'text-orange-400', barColor: 'from-orange-400 via-red-500 to-red-700' },
+      { name: 'AWS', level: 72, icon: FaAws, color: 'text-yellow-400', barColor: 'from-amber-400 via-orange-500 to-red-600' },
+      { name: 'Vercel', level: 88, icon: SiVercel, color: 'text-gray-900 dark:text-white', barColor: 'from-gray-600 via-gray-700 to-black dark:from-gray-200 dark:via-gray-100 dark:to-white' },
+      { name: 'Netlify', level: 80, icon: SiNetlify, color: 'text-teal-400', barColor: 'from-teal-400 via-cyan-500 to-green-600' },
+      { name: 'Jest', level: 85, icon: SiJest, color: 'text-red-400', barColor: 'from-red-400 via-rose-500 to-red-800' },
     ],
   },
 ];
@@ -101,9 +115,9 @@ const SkillBar = ({ skill, index, isInView }) => {
           )}
         </AnimatePresence>
       </div>
-      <div className="h-1.5 rounded-full bg-gray-200 dark:bg-dark-800 overflow-hidden">
+      <div className="h-2 rounded-full bg-gray-200 dark:bg-dark-800 overflow-hidden">
         <motion.div
-          className={`h-full rounded-full bg-gradient-to-r ${skill.color.replace('text-', 'from-').split(' ')[0]} to-transparent`}
+          className={`h-full rounded-full bg-gradient-to-r ${skill.barColor}`}
           initial={{ width: 0 }}
           animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}
           transition={{ delay: 0.3 + index * 0.08, duration: 0.8, ease: 'easeOut' }}
@@ -187,7 +201,7 @@ export default function Skills() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8"
         >
           {skillCategories.map((category, i) => (
             <SkillCard key={category.label} category={category} isInView={isInView} index={i} />
@@ -203,7 +217,7 @@ export default function Skills() {
         >
           <p className="text-gray-400 dark:text-dark-500 text-sm mb-4">Also experienced with</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            {['Redux', 'SASS', 'Webpack', 'REST APIs', 'CI/CD', 'Agile/Scrum', 'Figma', 'Responsive Design', 'Accessibility', 'SEO'].map(
+            {['SASS', 'Webpack', 'CI/CD', 'Agile/Scrum', 'Responsive Design', 'Accessibility', 'SEO', 'Docker', 'Firebase', 'GraphQL'].map(
               (tag) => (
                 <motion.span
                   key={tag}

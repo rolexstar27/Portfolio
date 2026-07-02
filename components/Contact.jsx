@@ -159,7 +159,7 @@ export default function Contact() {
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 text-gray-900 dark:text-white text-sm placeholder:text-gray-400 dark:placeholder:text-dark-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/20 transition-all duration-300"
-                        placeholder="John Doe"
+                        placeholder="Enter your name"
                       />
                     </div>
                     <div className="space-y-2">
@@ -170,7 +170,7 @@ export default function Contact() {
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         required
                         className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 text-gray-900 dark:text-white text-sm placeholder:text-gray-400 dark:placeholder:text-dark-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/20 transition-all duration-300"
-                        placeholder="john@example.com"
+                        placeholder="Enter your email"
                       />
                     </div>
                   </div>
@@ -183,7 +183,7 @@ export default function Contact() {
                       required
                       rows={5}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-dark-900 border border-gray-200 dark:border-dark-700 text-gray-900 dark:text-white text-sm placeholder:text-gray-400 dark:placeholder:text-dark-600 focus:outline-none focus:border-primary-500/50 focus:ring-1 focus:ring-primary-500/20 transition-all duration-300 resize-none"
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about your needs..."
                     />
                   </div>
 

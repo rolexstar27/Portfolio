@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { HiCodeBracket, HiServer, HiPaintBrush, HiAcademicCap } from 'react-icons/hi2';
 import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa6';
@@ -97,15 +98,14 @@ export default function About() {
             {/* Left - Image */}
             <motion.div variants={itemVariants} className="relative">
               <div className="relative aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden gradient-border">
-                <div className="w-full h-full bg-gray-100 dark:bg-dark-900 flex items-center justify-center">
-                  {/* Placeholder for profile image */}
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                      <span className="text-3xl font-display font-bold text-white">HM</span>
-                    </div>
-                    <p className="text-gray-400 dark:text-dark-400 text-sm">Profile Image</p>
-                  </div>
-                </div>
+                <Image
+                  src="/images/profile-image.jpg"
+                  alt="Profile photo"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
                 {/* Decorative corner */}
                 <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full bg-primary-500/20 border border-primary-500/30" />
                 <div className="absolute -bottom-3 -left-3 w-6 h-6 rounded-full bg-accent-500/20 border border-accent-500/30" />
@@ -156,9 +156,7 @@ export default function About() {
                   people using it.
                 </p>
                 <p>
-                  When I&apos;m not coding, you&apos;ll find me exploring new technologies,
-                  contributing to open source, or sharing knowledge through blog posts and
-                  mentoring.
+                  When I&apos;m not coding, I&apos;m exploring the intersection of technology and sustainable fashion trends—bringing the same eye for aesthetics and structure from the screen to the physical world.
                 </p>
               </div>
 
